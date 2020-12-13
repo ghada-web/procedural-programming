@@ -1,0 +1,30 @@
+PROCEDURE dot_product(v1:ARRAY_OF FLOAT[n],v2:ARRAY_OF FLOAT[n])
+VAR
+    ps:FLOAT;
+BEGIN
+    ps:=0;
+    IF (v1.length==v2.length) THEN
+        FOR i FROM 0 TO v1.length DO
+           FOR j FROM 0 TO v2.length  DO
+            ps:=ps+v1[i]*v2[j];
+           END_FOR   
+        END_FOR
+    END_IF
+    IF (ps<>0) THEN
+        Write("les deux vecteurs sont  orthogonaux");
+    ELSE
+         Write("les deux vecteurs sont  orthogonaux");
+
+    END_IF
+END
+ALGORITHM othogonal
+VAR
+   tab1:ARRAY_OFFLOAT[n];
+   tab2:ARRAY_OFFLOAT[n];
+BEGIN
+    FOR i FROM 0 TO n-1  DO
+        Read(tab2[i]);
+        Read(tab1[i]);
+    END_FOR
+    dot_product(tab1,tab2);
+END
